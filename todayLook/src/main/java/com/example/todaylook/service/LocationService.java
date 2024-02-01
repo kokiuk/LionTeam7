@@ -36,9 +36,10 @@ public class LocationService {
 
 
     // 클라이언트의 ip 가져오기
-    // localhost로 접속을 했을때는 내부망ip가 출력되고
-    // 외부 서버로(aws ec2)로 접속을 했을 때 클라이언트의 ip가 출력된다고 한다.
-    // 20240130 기준 - 이건 나중에 테스트 예정
+    // aws ec2 서버에 올리던가 ngrok으로 내 컴퓨터의 포트를 열어서
+    // 외부에서 접속을 하게되면 클라이언트의 ip가 가져와짐
+    // 내부망에서 접속을 하면 내부망이라 날씨가 안가져와진다.
+
     public void getClientIp()throws UnknownHostException{
         HttpServletRequest request = ((ServletRequestAttributes)
                 RequestContextHolder.currentRequestAttributes()).getRequest();
