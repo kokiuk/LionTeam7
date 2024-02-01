@@ -22,7 +22,7 @@ public class WeatherService {
     private String url = "http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst";
     private String serviceKey = "=akolP7EUmpke34aSR7FPYDlayA8fqa%2FbhfViIlSWQMkd5raloaouEQPQH6VvqlhxCA1WefHM1Wg0O%2Fp9aV127w%3D%3D";
     private String pageNo = "1";
-    private String numOfRows = "384";
+    private String numOfRows = "20";
     private String dataType = "JSON";
     @Setter
     private String base_date;
@@ -69,14 +69,15 @@ public class WeatherService {
 
         JSONArray jsonArray = (JSONArray) items.get("item");
         for (int i = 0; i < jsonArray.size(); i++) {
-            JSONObject obj = (JSONObject) jsonArray.get(i);
+            /*JSONObject obj = (JSONObject) jsonArray.get(i);
             if (obj.get("category").equals("TMP")){
                 String temp = obj.get("fcstValue").toString();
                 String date = obj.get("fcstDate").toString();
                 String time = obj.get("fcstTime").toString();
-
+            if (obj.get())
                 System.out.println("date: " + date + " " +"time: " + time + " " +"temperature: " + temp);
-            }
+            }*/
+            System.out.println(jsonArray.get(i));
         }
 
 
