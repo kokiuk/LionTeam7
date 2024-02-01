@@ -28,7 +28,8 @@ public class WeatherController {
         // x = 60 ~ 62
         // y = 120 ~ 121
 
-        locationService.setIp("14.33.74.0");
+        //locationService.setIp("14.33.74.0");
+        locationService.getClientIp();
         locationService.findCity();
         timeService.simpleTime();
         locationService.transferXY();
