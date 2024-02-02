@@ -26,14 +26,18 @@ public class Article {
     private Integer like;
     @Setter
     private String image;
+    //작성일자
     @Setter
     private String created_at;
 
     //관계성
+    //태그
     @Setter
     private Long tagId;
+    //게시판
     @Setter
     private Long boardId;
+    //작성자
     @Setter
     private Long userId;
 
