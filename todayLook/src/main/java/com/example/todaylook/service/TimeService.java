@@ -1,7 +1,6 @@
 package com.example.todaylook.service;
 
 import lombok.Getter;
-import lombok.Setter;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -10,10 +9,8 @@ import java.time.format.DateTimeFormatter;
 
 @Service
 public class TimeService {
-    @Setter
     @Getter
     private String Time;
-    @Setter
     @Getter
     private String Date;
 
@@ -24,8 +21,8 @@ public class TimeService {
         formatter = DateTimeFormatter.ofPattern("HH10");
         String nowTime = localDateTime.format(formatter);
 
-        setTime(nowTime);
-        setDate(nowDate);
+        Time = nowTime;
+        Date = nowDate;
         System.out.println(nowDate + " " + nowTime);
     }
 }
