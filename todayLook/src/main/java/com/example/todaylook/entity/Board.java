@@ -8,33 +8,22 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.Date;
-
 @Getter
 @Entity
 @NoArgsConstructor
-public class Article {
+public class Board {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Setter
-    private String title;
-    @Setter
-    private String content;
-    @Setter
-    private Integer like;
-    @Setter
-    private String image;
+    private String name;
     @Setter
     private String created_at;
 
     //관계성
     @Setter
-    private Long tagId;
-    @Setter
-    private Long boardId;
-    @Setter
-    private Long userId;
+    private Long articleId;
+
 
 }
