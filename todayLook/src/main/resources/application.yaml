@@ -1,4 +1,3 @@
-
 spring:
   datasource:
     url: jdbc:sqlite:db.sqlite
@@ -13,4 +12,7 @@ spring:
     init:
       mode: always
 
-
+  logging:
+    level:
+      org:
+        thymeleaf: DEBUG

@@ -3,6 +3,7 @@ package com.example.todaylook.controller;
 import com.example.todaylook.service.ArticleService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -10,4 +11,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping
 public class ArticleController {
     private final ArticleService articleService;
+
+    @GetMapping("/article")
+    public String readOne(){
+        
+        return "";
+    }
 }
