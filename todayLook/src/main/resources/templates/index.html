@@ -22,7 +22,7 @@
 </header>
 <nav id="menu">
     <ul th:unless="${boards.isEmpty()}" th:each="board: ${boards}">
-        <li><a href="#">[[${board.name}]]</a></li>
+        <li><a th:href="@{/boards/{id}(id=${board.id})}">[[${board.name}]]</a></li>
     </ul>
 </nav>
 <section id="weather-section">

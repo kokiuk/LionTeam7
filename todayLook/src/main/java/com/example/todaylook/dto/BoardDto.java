@@ -27,10 +27,10 @@ public class BoardDto {
 
     public static BoardDto fromEntity(Board entity){
         BoardDto dto = new BoardDto();
-        dto.id = dto.getId();
-        dto.name = dto.getName();
-        dto.created_at = dto.getCreated_at();
-        dto.articleId = dto.getArticleId();
+        dto.id = entity.getId();
+        dto.name = entity.getName();
+        dto.created_at = entity.getCreated_at();
+        dto.articleId = entity.getArticleId();
         return dto;
     }
 }
