@@ -45,12 +45,12 @@ public class ArticleDto {
         dto.id = entity.getId();
         dto.title = entity.getTitle();
         dto.content = entity.getContent().replace("\n", "<br>");
-        dto.like = dto.getLike();
-        dto.image = dto.getImage();
-        dto.created_at = dto.getCreated_at();
-        dto.tagId = dto.getTagId();
-        dto.boardId = dto.getBoardId();
-        dto.userId = dto.getUserId();
+        dto.like = entity.getLike();
+        dto.image = entity.getImage();
+        dto.created_at = entity.getCreated_at();
+        dto.tagId = entity.getTagId();
+        dto.boardId = entity.getBoardId();
+        dto.userId = entity.getUserId();
 
         return dto;
     }
