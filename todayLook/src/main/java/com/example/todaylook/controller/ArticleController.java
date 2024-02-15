@@ -27,8 +27,6 @@ public class ArticleController {
         return "article";
     }
 
-    //Create
-
     //Update
     @GetMapping("{id}/update")
     public String update(
