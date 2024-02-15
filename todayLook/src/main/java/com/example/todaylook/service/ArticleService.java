@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 @Slf4j
@@ -21,4 +22,9 @@ public class ArticleService {
     public List<Article> readByBoardId(Long id){
         return articleRepository.findByBoardId(id);
     }
+    public ArticleDto readArticle(Long articleId){
+        return ArticleDto.fromEntity(articleRepository.findById(articleId)
+                .orElseThrow(()-> new NoSuchElementException("게시글이 존재하지 않습니다 articleId =" + articleId)));
+    }
+
 }
