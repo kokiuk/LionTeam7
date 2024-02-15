@@ -21,4 +21,27 @@ public class ArticleService {
     public List<Article> readByBoardId(Long id){
         return articleRepository.findByBoardId(id);
     }
+
+    public ArticleDto create(ArticleDto dto){
+        Article article = Article.builder()
+                .title(dto.getTitle())
+                .content(dto.getContent())
+                .like(0)
+                .boardId(dto.getBoardId())
+                .id(dto.getId())
+                .build();
+
+        article = articleRepository.save(article);
+        return ArticleDto.fromEntity(article);
+    }
+
+    public ArticleDto update(ArticleDto dto){
+        Article newArticle = Article.builder()
+                .title(dto.getTitle())
+                .content(dto.getContent())
+                .like(0)
+                .boardId(dto.getBoardId())
+                .id(dto.getId())
+                .build();
+    }
 }

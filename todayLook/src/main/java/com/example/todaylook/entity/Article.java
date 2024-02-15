@@ -4,16 +4,18 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+import org.springframework.data.annotation.CreatedDate;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Getter
 @Entity
 @NoArgsConstructor
-public class Article {
+@Builder
+@AllArgsConstructor
+public class Article extends BaseTimeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -26,9 +28,6 @@ public class Article {
     private Integer like;
     @Setter
     private String image;
-    //작성일자
-    @Setter
-    private String created_at;
 
     //관계성
     //태그

@@ -4,9 +4,7 @@ import com.example.todaylook.dto.ArticleDto;
 import com.example.todaylook.service.ArticleService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequiredArgsConstructor
@@ -15,7 +13,7 @@ public class ArticleController {
     private final ArticleService articleService;
 
     //Read
-    @GetMapping("/{id}}")
+    @GetMapping("/{id}")
     public String readOne(
             @PathVariable
             Long id,
@@ -26,6 +24,13 @@ public class ArticleController {
     }
 
     //Create
+    @PostMapping("/create")
+    public ArticleDto create(
+            @RequestBody
+            ArticleDto dto
+    ){
+       return articleService.create(dto);
+    }
 
     //Update
 
