@@ -40,17 +40,16 @@ public class ArticleDto {
         this.userId = userId;
     }
 
-    public static ArticleDto fromEntity(Article entity){
+    public static ArticleDto fromEntity(Article entity) {
         ArticleDto dto = new ArticleDto();
-        dto.id = entity.getId();
-        dto.title = entity.getTitle();
-        dto.content = entity.getContent().replace("\n", "<br>");
-        dto.like = dto.getLike();
-        dto.image = dto.getImage();
-        dto.created_at = dto.getCreated_at();
-        dto.tagId = dto.getTagId();
-        dto.boardId = dto.getBoardId();
-        dto.userId = dto.getUserId();
+        dto.setTitle(entity.getTitle());
+        dto.setContent(entity.getContent().replace("\n", "<br>"));
+        dto.setLike(entity.getLike());
+        dto.setImage(entity.getImage());
+        dto.setCreated_at(entity.getCreated_at());
+        dto.setTagId(entity.getTagId());
+        dto.setBoardId(entity.getBoardId());
+        dto.setUserId(entity.getUserId());
 
         return dto;
     }
