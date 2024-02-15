@@ -13,7 +13,7 @@ import java.util.Date;
 @Getter
 @Entity
 @NoArgsConstructor
-@Builder
+@Builder(toBuilder = true)
 @AllArgsConstructor
 public class Article extends BaseTimeEntity {
     @Id
