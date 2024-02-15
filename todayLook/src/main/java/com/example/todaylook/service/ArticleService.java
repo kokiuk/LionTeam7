@@ -21,4 +21,20 @@ public class ArticleService {
     public List<Article> readByBoardId(Long id){
         return articleRepository.findByBoardId(id);
     }
+
+    public ArticleDto readOne(Long id){
+        Optional<Article> articleOptional
+                = articleRepository.findById(id);
+        if (articleOptional.isEmpty())
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        return ArticleDto.fromEntity(articleOptional.get());
+    }
+
+    public ArticleDto create(Long id, ArticleDto dto){
+        Article article = new Article();
+        article.setBoardId(id);
+        article.setTitle(dto.getTitle());
+        article.setContent(dto.getContent());
+        return ArticleDto.fromEntity(articleRepository.save(article));
+    }
 }

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <form th:action="@{/boards/{id}/article(id=${board.id})}" method="post">
+    제목 : <input type="text" name="title">
+    내용 : <input type="text" name="content">
+    <input type="submit" value="작성">
+    <input type="button" value="취소" onclick="history.back()">
+  </form>
+</body>
+</html>

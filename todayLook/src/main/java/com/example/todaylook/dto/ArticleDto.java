@@ -40,6 +40,11 @@ public class ArticleDto {
         this.userId = userId;
     }
 
+    public ArticleDto(String title, String content) {
+        this.title = title;
+        this.content = content;
+    }
+
     public static ArticleDto fromEntity(Article entity){
         ArticleDto dto = new ArticleDto();
         dto.id = entity.getId();

@@ -1,5 +1,6 @@
 package com.example.todaylook.service;
 
+import com.example.todaylook.dto.ArticleDto;
 import com.example.todaylook.dto.BoardDto;
 import com.example.todaylook.entity.Board;
 import com.example.todaylook.repo.BoardRepository;
@@ -38,6 +39,7 @@ public class BoardService {
 
 
     }
+
 
 
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -8,5 +8,8 @@
     <div th:unless="${articles.isEmpty()}" th:each="article: ${articles}">
         <a th:href="@{/article/{id}(id=${article.id})}">[[${article.title}]]</a>
     </div>
+    <form th:action="@{/boards/{id}/article(id=${board.id})}" method="get">
+        <input type="submit" value="작성">
+    </form>
 </body>
 </html>
