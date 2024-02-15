@@ -30,14 +30,39 @@ public class ArticleController {
     //Create
 
     //Update
-    @GetMapping("/update")
+    @GetMapping("{id}/update")
     public String update(
-            @RequestParam("articleId")
-            Long id
+            @PathVariable
+            Long id,
+            Model model
     ){
-        System.out.println(id);
-        return "";
+//        System.out.println(id);
+        model.addAttribute("article", articleService.readOne(id));
+        return "update";
+    }
+
+    @PostMapping("{id}/update")
+    public String updateDo(
+            @PathVariable
+            Long id,
+            @RequestParam("title")
+            String title,
+            @RequestParam("content")
+            String content
+    ){
+        articleService.update(id, new ArticleDto(title, content));
+        return String.format("redirect:/article/%d", id);
     }
 
     //Delete
+    @PostMapping("{id}/delete")
+    public String delete(
+            @PathVariable
+            Long id
+    ){
+        Long boardId = articleService.readOne(id).getBoardId();
+        articleService.delete(id);
+        return String.format("redirect:/boards/%d", boardId);
+    }
+
 }

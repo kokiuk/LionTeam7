@@ -8,13 +8,11 @@
 <div th:each="article : ${articles}">
     <div th:text="${article.content}"></div>
 
-    <form action="update" method="post">
-        <input type="hidden" name="articleId" th:value="${article.id}">
+    <form th:action="@{/article/{id}/update(id=${article.id})}" method="get">
         <input type="submit" value="수정">
     </form>
 
-    <form action="delete" method="post">
-        <input type="hidden" name="articleId" th:value="${article.id}">
+    <form th:action="@{/article/{id}/delete(id=${article.id})}" method="post">
         <input type="submit" value="삭제">
     </form>
 </div>

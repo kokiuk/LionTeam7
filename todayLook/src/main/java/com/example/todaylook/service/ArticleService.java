@@ -37,4 +37,19 @@ public class ArticleService {
         article.setContent(dto.getContent());
         return ArticleDto.fromEntity(articleRepository.save(article));
     }
+
+    public void update(Long id, ArticleDto dto) {
+        Article article = articleRepository.findById(id)
+                .orElseThrow();
+        article.setTitle(dto.getTitle());
+        article.setContent(dto.getContent());
+
+        ArticleDto.fromEntity(articleRepository.save(article));
+    }
+
+    public void delete(Long id){
+        Article article = articleRepository.findById(id)
+                .orElseThrow();
+        articleRepository.delete(article);
+    }
 }
